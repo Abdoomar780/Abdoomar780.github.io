@@ -1,37 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>معرض الأنمي الخاص بي</title>
+    <title>عالم الأنمي الساحر!</title>
     <style>
         body {
-            background: #1a1a2e;
-            color: white;
-            font-family: Arial;
+            background: #0a0a1a url('https://i.gifer.com/7VE.gif') fixed;
+            font-family: 'Arial', sans-serif;
             text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+            animation: glow 2s infinite alternate;
+            padding: 20px;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #00ffff; }
+            to { text-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff; }
         }
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 20px;
         }
         .gallery img {
-            width: 150px;
-            height: 200px;
+            width: 200px;
+            height: 280px;
             margin: 10px;
             border: 3px solid #e94560;
-            border-radius: 10px;
+            border-radius: 15px;
             object-fit: cover;
+            transition: 0.3s;
+            cursor: pointer;
         }
-        h1 {
-            color: #e94560;
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #e94560;
+        }
+        .social-buttons {
+            margin: 30px;
+        }
+        .social-buttons a {
+            display: inline-block;
+            margin: 10px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-buttons a:hover {
+            transform: scale(1.5) rotate(360deg);
+        }
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <h1>🎌 معرض الأنمي الخاص بي 🎌</h1>
+    <h1>🎌 معرض الأنمي الساحر 🎌</h1>
+
     <div class="gallery">
-        <!-- استبدل روابط الصور بالصور التي تريدها -->
-        <img src="anime1.jpg" alt="صورة أنمي">
+        <!-- استبدل هذه الأسطر بصورك (احفظها بنفس المجلد) -->
+        <img src="anime1.jpg" alt="أنمي 1">
+        <img src="anime2.jpg" alt="أنمي 2">
+        <img src="anime3.jpg" alt="أنمي 3">
+        <img src="anime4.jpg" alt="أنمي 4">
     </div>
+
+    <div class="social-buttons">
+        <a href="#" class="instagram">📸</a>
+        <a href="#" class="twitter">🐦</a>
+        <a href="#" class="youtube">▶️</a>
+    </div>
+
+    <footer>
+        <p>صنع بكل ❤️ بواسطة عاشق الأنمي!</p>
+    </footer>
+
+    <!-- الموسيقى (استبدل الرابط برابط PASSO BEM SOLTO من SoundCloud) -->
+    <audio autoplay loop>
+        <source src="https://soundcloud.com/..." type="audio/mpeg">
+    </audio>
+
+    <script>
+        // تأثير الصور عند النقر
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                img.style.transform = 'scale(1.8)';
+                setTimeout(() => { img.style.transform = 'scale(1)'; }, 500);
+            });
+        });
+    </script>
 </body>
 </html>
